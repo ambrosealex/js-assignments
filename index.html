@@ -1,0 +1,45 @@
+<script type="text/javascript">
+    var x = [3,5, "Dojo", "rocks", "Michael", "Sensei"];
+    for(var i = 0; i < x.length;i++)
+    {
+        console.log(x[i]);
+    }
+    //end part 1
+
+    x.push(100);
+
+    //end part 2
+    var y = [1,2,3,4];
+    x.push(y);
+    console.log(x);
+    //end part 3
+
+    var sum =  0;
+    for(var i = 0; i <=500;i++)
+    {
+        sum +=i;
+    }
+    console.log(sum);
+    //end part 4
+
+    var z = [1,5,90,25,-3,0];
+    var min = z[0];
+    for(var i = 0;i<z.length;i++)
+    {
+        if(z[i]<min){
+            min = z[i];
+        }
+    }
+    console.log(min);
+    //end part 5
+
+    var average = 0;
+    var zsum=0;
+    for(var i = 0;i<z.length;i++)
+    {
+        zsum += z[i];
+    }
+    average = zsum/z.length;
+    console.log(average);
+    //end part 6
+</script>

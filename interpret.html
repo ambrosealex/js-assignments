@@ -1,0 +1,70 @@
+<script type = "text/javascript">
+// Problem 1
+console.log(first_variable);
+var first_variable = "Yipee I was first!";
+function firstFunc() {
+  first_variable = "Not anymore!!!";
+  console.log(first_variable)
+}
+console.log(first_variable);
+
+//Interpreted code
+//rearranged with output predictions
+var first_variable;                        //first_variable floats to the top of its scope:global and is declared, but not assigned
+function firstFunc() {                    //funtion "firstFunc" floats to top, but under the variable declarations
+    first_variable = "Not anymore!!!";        //first_variable is NOT assigned to the string "Not anymore!!!" because the function is NOT    being called
+    console.log(first_variable);            //first_variable is NOT logged to the console because the function isn't called
+}
+console.log(first_variable);               //first_variable, which has not been assigned a value, is logged to the console as undefined
+
+first_variable = "Yipee I was first!";      //the variable assignment is anchored to its spot
+                                            //first_variable is assigned to the string "Yipee I was first!"
+console.log(first_variable);                //first_variable is logged to the console as "Yipee I was first!"
+
+
+// Problem 2
+var food = "Chicken";
+function eat() {
+  food = "half-chicken";
+  console.log(food);
+  var food = "gone";       // NOTE: I'M TRYING TO TRICK YOU HERE!!!!
+}
+eat();
+console.log(food);
+
+
+//Interpreted code
+//rearranged with output predictions
+
+var food;                        //the declaration of food floats to the top of its scope: global
+function eat(){                  //the initializaiton of function eat() floats to the top, but under the variable declarations
+    var food;                    //the variable food floats to the top of its scope: function eat();
+    food = "half-chicken";       //when eat() is called, the local variable food will be assigned the value "half-chicken"
+    console.log(food);           //when eat() is called, food = "half-chicken" and this will be logged to the console
+    food = "gone";               //the local variable food will now be assigned the string "gone"
+}
+food = "Chicken";                //the global variable food will be assigned the value "Chicken"
+eat();                           //the function eat() is called, which will run through the instructions laid out in the function declaration
+                                //thus, "half-chicken" will be logged to the console
+console.log(food);               //the global variable food will be logged to the console with the value of "Chicken"
+
+// Problem 3
+
+
+var new_word = "NEW!";
+function lastFunc() {
+  new_word = "old";
+}
+console.log(new_word);
+
+//Interpreted code
+//rearranged with output predictions
+var new_word;                        //global variable new_word is declared
+fucntion lastFunc(){                //fucntion lastFunc() is declared and its instructions are defined
+    new_word = "old";               //when lastFunc() is called, new_word will be assigned to the value "old"
+}
+
+new_word = "NEW!";                 //new_word is assigned the value "NEW!"
+console.log(new_word);             //new_word is logged to the console with value "NEW!" - lastFUnc() is never called
+
+</script>
