@@ -1,0 +1,56 @@
+<script type="text/javascript">
+function personConstructor(name){
+    var obj = {};
+    obj["name"] = name;
+    obj["distance_travelled"] = 0;
+    obj["say_name"] = function(){
+        alert(obj["name"]);
+    };
+    obj["say_something"] = function(something){
+        alert(obj["name"] + " says " + something);
+    };
+    obj["walk"] = function(){
+        alert(obj["name"] + " is walking");
+        obj["distance_travelled"] += 3;
+    };
+    obj["run"] = function(){
+        alert(obj["name"] + " is running");
+        obj["distance_travelled"] += 10;
+    };
+    obj["crawl"] = function(){
+        alert(obj["name"] + " is crawling");
+        obj["distance_travelled"] += 1;
+    };
+    return obj;
+}
+var alex = personConstructor("Alex");
+// alex.crawl();
+// alex.run();
+// alex.say_something(": I am happy");
+// console.log(alex["name"] + " has travelled " + alex["distance_travelled"] + " miles.");
+
+function ninjaConstructior(name, cohort){
+    var obj = {};
+    obj["name"] = name;
+    obj["cohort"] = cohort;
+    obj["belt"] = "yellow";
+    obj["levelUp"] = function(){
+        if (obj["belt"] === "red") {
+            obj["belt"] = "black";
+        }
+        if (obj["belt"] === "yellow") {
+            obj["belt"] = "red";
+        }
+    };
+
+    return obj;
+}
+
+// alex = ninjaConstructior("Alex", "Chicago");
+// console.log(alex);
+// alex.levelUp();
+// console.log(alex);
+// alex.levelUp();
+// console.log(alex);
+
+</script>

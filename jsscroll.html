@@ -36,7 +36,7 @@
 		{
             temp = el.innerHTML; //stored the current el.innerHTML into a variable so it can be restored at a later date
 			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
-            if(words[word_counter][character_counter-1] == " ") //tests the character that was just added to the innerHTML to see if
+            if(words[word_counter][character_counter-1] === " ") //tests the character that was just added to the innerHTML to see if
                                                                 //it is a space. if it is, restores el.innerHTML to what it was
                                                                 //before the space was added and appends the "space" character
                                                                 //this is done so that the padding on the "magic" div recognizes
