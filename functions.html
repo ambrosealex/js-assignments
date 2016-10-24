@@ -115,7 +115,7 @@ var person = {
     },
     walk : function(){
         alert(person.name + " is walking");
-        distance_traveled +=3;
+        person.distance_traveled +=3;
     },
     run : function(){
         alert(person.name + " is running");
@@ -127,7 +127,7 @@ var person = {
     }
 }
 
+person["name"] = "Jon";
 person.say_something("thank you");
 person.run();
-console.log(person.distance_traveled);
 </script>
